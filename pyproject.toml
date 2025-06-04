@@ -1,0 +1,18 @@
+[project]
+name = "agente-productos-servicio-api"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "fastapi[standard]>=0.115.12",
+    "pydantic>=2.11.1",
+    "langchain>=0.3.25",
+    "langchain-community>=0.3.24",
+    "langchain-openai>=0.3.18",
+    "langgraph>=0.4.5",
+    "langgraph-checkpoint-sqlite>=2.0.10",
+    "psycopg2>=2.9.10",
+    "python-dotenv>=1.1.0",
+    "uvicorn>=0.34.0",
+]
