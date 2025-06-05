@@ -84,7 +84,7 @@ def needs_reformulation(current_question, last_question):
     # Default: reformulate
     return True
 
-def reformulate_question(state):
+def reformulate_question(state: AgentState):
     """
     Antes de generar un query, se reformula la pregunta del usuario en base a la anterior pregunta, resumen y query.
     aqui se guarda la pregunta como ultima pregunta
