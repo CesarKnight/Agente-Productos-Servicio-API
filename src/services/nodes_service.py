@@ -84,7 +84,7 @@ def needs_reformulation(current_question, last_question):
     # Default: reformulate
     return True
 
-def reformulate_question(state):
+def reformulate_question(state: AgentState):
     """
     Antes de generar un query, se reformula la pregunta del usuario en base a la anterior pregunta, resumen y query.
     aqui se guarda la pregunta como ultima pregunta
@@ -93,8 +93,8 @@ def reformulate_question(state):
     
     last_question = state.get("last_question", "")
     last_query = state.get("last_query", "")
-    last_response = messages[-4].content if messages else ""
-    current_question = messages[-3].content if messages else ""
+    last_response = messages[-4].content if len(messages) >= 4 and hasattr(messages[-4], "content") else ""
+    current_question = messages[-3].content if len(messages) >= 3 and hasattr(messages[-3], "content") else ""
     summary = state.get("summary", "")
     
     if not needs_reformulation(current_question, last_question):
